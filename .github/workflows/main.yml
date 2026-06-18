@@ -10,13 +10,19 @@ on:
 jobs:
   preprocess-data:
     runs-on: ubuntu-latest
+    
+    # Perbaikan Utama 1: Memberikan izin write agar bisa melakukan git push artifacts
+    permissions:
+      contents: write
 
     steps:
+    # Perbaikan Utama 2: Upgrade ke v4 (Bebas dari deprecation Node.js 20)
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
+    # Perbaikan Utama 3: Upgrade ke v5 (Bebas dari deprecation Node.js 20)
     - name: Setup Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.12.7'
 
