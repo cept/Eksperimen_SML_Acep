@@ -28,7 +28,7 @@ jobs:
     - name: Run Automation Script
       run: |
         cd preprocessing
-        python automate_Budi.py
+        python automate_Acep.py
 
     - name: Commit and Push Processed Data
       run: |
